@@ -25,11 +25,14 @@ class CalculateScreen extends StatelessWidget {
             height: 10.0,
           ),
           Container(
-            color: const Color.fromARGB(60, 22, 86, 197),
-            height: double.infinity,
+            height: 500.0,
             width: double.infinity,
             margin: const EdgeInsets.symmetric(horizontal: 15.0),
-            child: Column(
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(60, 22, 86, 197),
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
@@ -37,7 +40,7 @@ class CalculateScreen extends StatelessWidget {
                   style: TextStyle(
                     color: Color.fromARGB(255, 158, 218, 160),
                     fontWeight: FontWeight.w500,
-                    fontSize: 23.0,
+                    fontSize: 32.0,
                   ),
                 ),
                 Text(
@@ -49,7 +52,7 @@ class CalculateScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding: EdgeInsets.all(15.0),
                   child: Text(
                     'You Have A Normal Body. Good Job',
                     style: TextStyle(

@@ -1,18 +1,21 @@
+import 'package:bmi_calculator_2/provider/weight_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class Weight0Age extends StatefulWidget {
+class Weight0Age extends ConsumerStatefulWidget {
   const Weight0Age({super.key});
 
   @override
-  State<Weight0Age> createState() => _Weight0AgeState();
+  ConsumerState<Weight0Age> createState() => _Weight0AgeState();
 }
 
-class _Weight0AgeState extends State<Weight0Age> {
-  int weight = 55;
-  int age = 20;
-
+class _Weight0AgeState extends ConsumerState<Weight0Age> {
   @override
   Widget build(BuildContext context) {
+    final weight = ref.watch(weightprovider);
+    // int weight = 55;
+    int age = 20;
+
     return Row(
       children: [
         Container(
@@ -54,9 +57,7 @@ class _Weight0AgeState extends State<Weight0Age> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      setState(() {
-                        weight++;
-                      });
+                      ref.read(weightprovider.notifier).addwt();
                     },
                     child: Container(
                       height: 40.0,
@@ -75,9 +76,7 @@ class _Weight0AgeState extends State<Weight0Age> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      setState(() {
-                        weight--;
-                      });
+                      ref.read(weightprovider.notifier).removewt();
                     },
                     child: Container(
                       height: 40.0,

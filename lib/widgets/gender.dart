@@ -40,7 +40,7 @@ class _GenderState extends State<Gender> {
           bottom: 20.0,
         ),
         decoration: BoxDecoration(
-          color: widget.isMaleSelected
+          color: widget.isFemaleSelected
               ? const Color.fromARGB(60, 22, 86, 197)
               : const Color.fromARGB(57, 150, 179, 228),
           borderRadius: BorderRadius.circular(10.0),
@@ -51,14 +51,14 @@ class _GenderState extends State<Gender> {
             Icon(
               widget.icon,
               size: 85.0,
-              color: widget.isMaleSelected ? Colors.white70 : Colors.black87,
+              color: widget.isFemaleSelected ? Colors.white70 : Colors.black87,
             ),
             Text(
               widget.text,
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
-                color: widget.isMaleSelected ? Colors.white : Colors.black,
+                color: widget.isFemaleSelected ? Colors.white : Colors.black,
               ),
             ),
           ],

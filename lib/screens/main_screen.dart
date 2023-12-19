@@ -17,7 +17,22 @@ class MainScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const Gender(),
+            Row(
+              children: [
+                Gender(
+                  icon: Icons.male,
+                  text: 'MALE',
+                  isMaleSelected: true,
+                  isFemaleSelected: false,
+                ),
+                Gender(
+                  icon: Icons.female,
+                  text: 'FEMALE',
+                  isMaleSelected: false,
+                  isFemaleSelected: true,
+                ),
+              ],
+            ),
             const SizedBox(
               height: 10.0,
             ),

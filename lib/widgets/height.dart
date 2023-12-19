@@ -37,11 +37,11 @@ class _HeightState extends State<Height> {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(top: 8.0),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
             child: Text(
-              '180cm',
-              style: TextStyle(
+              slidervalue.toStringAsFixed(0),
+              style: const TextStyle(
                 fontSize: 45.0,
                 fontWeight: FontWeight.bold,
                 color: Color.fromARGB(184, 255, 255, 255),
@@ -50,6 +50,8 @@ class _HeightState extends State<Height> {
           ),
           Slider(
             value: slidervalue,
+            min: 0,
+            max: 250,
             onChanged: (value) {
               setState(() {
                 slidervalue = value;

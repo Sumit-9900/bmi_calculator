@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Weight0Age extends StatelessWidget {
+class Weight0Age extends StatefulWidget {
   const Weight0Age({super.key});
+
+  @override
+  State<Weight0Age> createState() => _Weight0AgeState();
+}
+
+class _Weight0AgeState extends State<Weight0Age> {
+  int weight = 55;
+  int age = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +41,9 @@ class Weight0Age extends StatelessWidget {
                   ),
                 ),
               ),
-              const Text(
-                '60',
-                style: TextStyle(
+              Text(
+                weight.toString(),
+                style: const TextStyle(
                   fontSize: 45.0,
                   fontWeight: FontWeight.bold,
                   color: Color.fromARGB(184, 255, 255, 255),
@@ -44,31 +52,45 @@ class Weight0Age extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Container(
-                    height: 40.0,
-                    width: 40.0,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(128, 255, 255, 255),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                    child: const Center(
-                      child: Icon(
-                        Icons.add,
-                        size: 30.0,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        weight++;
+                      });
+                    },
+                    child: Container(
+                      height: 40.0,
+                      width: 40.0,
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(128, 255, 255, 255),
+                        borderRadius: BorderRadius.circular(50.0),
+                      ),
+                      child: const Center(
+                        child: Icon(
+                          Icons.add,
+                          size: 30.0,
+                        ),
                       ),
                     ),
                   ),
-                  Container(
-                    height: 40.0,
-                    width: 40.0,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(128, 255, 255, 255),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                    child: const Center(
-                      child: Icon(
-                        Icons.remove,
-                        size: 30.0,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        weight--;
+                      });
+                    },
+                    child: Container(
+                      height: 40.0,
+                      width: 40.0,
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(128, 255, 255, 255),
+                        borderRadius: BorderRadius.circular(50.0),
+                      ),
+                      child: const Center(
+                        child: Icon(
+                          Icons.remove,
+                          size: 30.0,
+                        ),
                       ),
                     ),
                   ),
@@ -103,9 +125,9 @@ class Weight0Age extends StatelessWidget {
                   ),
                 ),
               ),
-              const Text(
-                '20',
-                style: TextStyle(
+              Text(
+                age.toString(),
+                style: const TextStyle(
                   fontSize: 45.0,
                   fontWeight: FontWeight.bold,
                   color: Color.fromARGB(184, 255, 255, 255),
@@ -114,31 +136,45 @@ class Weight0Age extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Container(
-                    height: 40.0,
-                    width: 40.0,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(128, 255, 255, 255),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                    child: const Center(
-                      child: Icon(
-                        Icons.add,
-                        size: 30.0,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        age++;
+                      });
+                    },
+                    child: Container(
+                      height: 40.0,
+                      width: 40.0,
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(128, 255, 255, 255),
+                        borderRadius: BorderRadius.circular(50.0),
+                      ),
+                      child: const Center(
+                        child: Icon(
+                          Icons.add,
+                          size: 30.0,
+                        ),
                       ),
                     ),
                   ),
-                  Container(
-                    height: 40.0,
-                    width: 40.0,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(128, 255, 255, 255),
-                      borderRadius: BorderRadius.circular(50.0),
-                    ),
-                    child: const Center(
-                      child: Icon(
-                        Icons.remove,
-                        size: 30.0,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        age--;
+                      });
+                    },
+                    child: Container(
+                      height: 40.0,
+                      width: 40.0,
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(128, 255, 255, 255),
+                        borderRadius: BorderRadius.circular(50.0),
+                      ),
+                      child: const Center(
+                        child: Icon(
+                          Icons.remove,
+                          size: 30.0,
+                        ),
                       ),
                     ),
                   ),

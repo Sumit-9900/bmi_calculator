@@ -10,11 +10,11 @@ class Weight0Age extends ConsumerStatefulWidget {
 }
 
 class _Weight0AgeState extends ConsumerState<Weight0Age> {
+  // int weight = 55;
+  int age = 20;
   @override
   Widget build(BuildContext context) {
     final weight = ref.watch(weightprovider);
-    // int weight = 55;
-    int age = 20;
 
     return Row(
       children: [

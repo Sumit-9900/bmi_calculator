@@ -43,7 +43,7 @@ class _HeightState extends ConsumerState<Height> {
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: Text(
-              slidervalue.toStringAsFixed(0),
+              '${slidervalue.toStringAsFixed(0)} cm',
               style: const TextStyle(
                 fontSize: 45.0,
                 fontWeight: FontWeight.bold,

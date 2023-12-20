@@ -45,7 +45,7 @@ class _Weight0AgeState extends ConsumerState<Weight0Age> {
                 ),
               ),
               Text(
-                weight.toString(),
+                '${weight.toString()} kg',
                 style: const TextStyle(
                   fontSize: 45.0,
                   fontWeight: FontWeight.bold,

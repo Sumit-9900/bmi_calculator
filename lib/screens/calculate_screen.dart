@@ -1,10 +1,34 @@
+import 'package:bmi_calculator_2/provider/height_provider.dart';
+import 'package:bmi_calculator_2/provider/weight_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class CalculateScreen extends StatelessWidget {
+class CalculateScreen extends ConsumerWidget {
   const CalculateScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final weight = ref.watch(weightprovider);
+    final height = ref.watch(heightprovider);
+    String text1 = '';
+    String text2 = '';
+
+    final result = (weight / ((height / 100) * (height / 100)));
+
+    if (result <= 18.5) {
+      text1 = 'Underweight';
+      text2 = 'You need to gain weight.';
+    } else if (result <= 24.9) {
+      text1 = 'Healthy Weight';
+      text2 = 'You have a perfect body.';
+    } else if (result <= 29.9) {
+      text1 = 'Overweight';
+      text2 = 'You need to loose weight';
+    } else {
+      text1 = 'Obesity';
+      text2 = 'You need to loose weight more';
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('BMI CALCULATOR'),
@@ -32,30 +56,30 @@ class CalculateScreen extends StatelessWidget {
               color: const Color.fromARGB(60, 22, 86, 197),
               borderRadius: BorderRadius.circular(10.0),
             ),
-            child: const Column(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'NORMAL',
-                  style: TextStyle(
+                  text1,
+                  style: const TextStyle(
                     color: Color.fromARGB(255, 158, 218, 160),
                     fontWeight: FontWeight.w500,
                     fontSize: 32.0,
                   ),
                 ),
                 Text(
-                  '18.5',
-                  style: TextStyle(
+                  result.toStringAsFixed(1),
+                  style: const TextStyle(
                     color: Color.fromARGB(166, 255, 255, 255),
                     fontWeight: FontWeight.w500,
                     fontSize: 130.0,
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(15.0),
+                  padding: const EdgeInsets.all(15.0),
                   child: Text(
-                    'You Have A Normal Body. Good Job',
-                    style: TextStyle(
+                    text2,
+                    style: const TextStyle(
                       color: Color.fromARGB(166, 255, 255, 255),
                       fontWeight: FontWeight.w500,
                       fontSize: 28.0,

@@ -1,16 +1,19 @@
+import 'package:bmi_calculator_2/provider/height_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class Height extends StatefulWidget {
+class Height extends ConsumerStatefulWidget {
   const Height({super.key});
 
   @override
-  State<Height> createState() => _HeightState();
+  ConsumerState<Height> createState() => _HeightState();
 }
 
-class _HeightState extends State<Height> {
-  double slidervalue = 0;
+class _HeightState extends ConsumerState<Height> {
+  // double slidervalue = 0;
   @override
   Widget build(BuildContext context) {
+    double slidervalue = ref.watch(heightprovider);
     return Container(
       height: 170.0,
       width: double.infinity,
@@ -53,9 +56,7 @@ class _HeightState extends State<Height> {
             min: 0,
             max: 250,
             onChanged: (value) {
-              setState(() {
-                slidervalue = value;
-              });
+              ref.watch(heightprovider.notifier).updateSlider(value);
             },
           ),
         ],

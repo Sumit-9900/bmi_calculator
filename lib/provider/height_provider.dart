@@ -1,17 +1,13 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class WeightNotifier extends StateNotifier<int> {
-  WeightNotifier() : super(0);
+class HeightNotifier extends StateNotifier<double> {
+  HeightNotifier() : super(0);
 
-  // void addwt() {
-  //   state++;
-  // }
-
-  // void removewt() {
-  //   state--;
-  // }
+  void updateSlider(double value) {
+    state = value;
+  }
 }
 
-final weightprovider = StateNotifierProvider<WeightNotifier, int>(
-  (ref) => WeightNotifier(),
+final heightprovider = StateNotifierProvider<HeightNotifier, double>(
+  (ref) => HeightNotifier(),
 );
